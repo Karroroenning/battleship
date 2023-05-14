@@ -1,4 +1,12 @@
-#import random
+from random import randint
+
+ships_length = [2,3,4]
+player_guess_board = [[" "] * 8 for i in range(8)]
+computer_guess_board = [[" "] * 8 for i in range(8)]
+player_board = [[" "] * 8 for i in range(8)] 
+computer_board = [[" "] * 8 for i in range(8)]
+
+
 
 def menu():
     print(
@@ -14,53 +22,61 @@ def menu():
     answer = input_val = input('')
     while True:
         if answer == '':
-            rungame()
+            print_board()
 
 
-#class Gameboard:
+
     #"""
     #The gameboard. This code is copied by another coder (more info in my readme.md).
-    #"""
-    #def __init__(self, board):
-        #self.board = board
+    #""""
 
-    #def get_letters_to_numbers():
-        #letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5, "G": 6, "H": 7}
-        #return letters_to_numbers
+#Board for holding ship locations
+HIDDEN_BOARD = [[" "] * 8 for x in range(8)]
+# Board for displaying hits and misses
+GUESS_BOARD = [[" "] * 8 for i in range(8)]
 
-    #def print_board(self):
-        #print("  A B C D E F G H")
-        #print("  ---------------")
-        #row_number = 1
-        #for row in self.board:
-            #print("%d|%s|" % (row_number, "|".join(row)))
-            #row_number += 1
+def print_board(board):
+    print("  A B C D E F G H")
+    print("  ----------------")
+    row_number = 1
+    for row in board:
+        print("%d|%s|" % (row_number, "|".join(row)))
+        row_number += 1
 
-#class Battleship:
-    #def __init__(self, board):
-
-    #def create_ships(self):
-        #"""
-        #The player set there ships location to the board
-        #"""
-
-    #def get_ships_location(self):
-        #"""
-        #Ask the player wich colums and location they want to put there bomb to sink the computers ships
-        #"""
-
-    #def count_hit_ships(self):
-        #"""
-        #Count everytime you hit a ship
-        #"""
+letters_to_numbers = {
+    'A': 0,
+    'B': 1,
+    'C': 2,
+    'D': 3,
+    'E': 4,
+    'F': 5,
+    'G': 6,
+    'H': 7
+}
 
 
-def rungame():
+def create_ships(board):
     """
-    Start the game
+    Put 3 ships on the board. Horizontel or vertical. Player puts ships that is 
+    2, 3 or 3 ¤ long.
     """
-    print('Welcome')
+
+def ships_not_outside():
+    """
+    Check if the player doesn't place the ships outside the board.
+    """
+
+def not_overlap():
+    """
+    Check so the player doesn't overlap the ships.
+    """
+
+def get_ship_location():
 
 
-rungame()
+def count_hit_ships():
+    """
+    Check if all ships are hit
+    """
+
 menu()
