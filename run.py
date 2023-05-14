@@ -50,36 +50,67 @@ letters_to_numbers = {
 
 def create_ships(board):
     """
-    Put 3 ships on the board. Horizontel or vertical. Player puts ships that is 
+    Put 3 ships on the board. Horizontel or vertical. Player and computer puts ships that is 
     2, 3 or 3 ¤ long.
     """
+    #Computer random puts out ships
     for ship_length in ships_length:
         while True:
             if board == computer_guess_board:
                 orientation, row, column = random.choice(["H", "V"]), random.randint(0,7), random.randint(0,7)
-                if ships_not_outside(ship_length, orientation, row, column)
+                if ships_not_outside(ship_length, orientation, row, column):
+                    if not_overlap(board, ship_length, row, column, orientation) == False:
+                        if orientation == "H":
+                            for i in range(column, column + ship_length):
+                                board[row][i] == "¤"
+                        else:
+                            for i in range(row, row + ship_length):
+                                board[column][i] == "¤"
+                        break
+            else:
+                place_ship = True
+                print('Deploy you ships to the board. Set out the length of' + str(ship_length))
+
+                if ships_not_outside(ship_length, orientation, row, column):
+                    if not_overlap(board, ship_length, row, column, orientation) == False:
+                        if orientation == "H":
+                            for i in range(column, column + ship_length):
+                                board[row][i] == "¤"
+                        else:
+                            for i in range(row, row + ship_length):
+                                board[column][i] == "¤"
+                        break
 
 def ships_not_outside(ship_length, orientation, row, column):
     """
-    Check if the player doesn't place the ships outside the board.
+    Check if the ships doesn't place outside the board.
     """
     if orientation == "H":
-        if column + ship_length > 8:
-            return False
+        if column + ship_length < 8:
+            return True
         else: 
-            return True
-    else:
-        if row + ship_length > 8:
             return False
-        else:
+    else:
+        if row + ship_length < 8:
             return True
+        else:
+            return False
     
 
-def not_overlap():
+def not_overlap(board, ship_length, row, column, orientation):
     """
-    Check so the player doesn't overlap the ships.
+    Check so the ships doesn't overlap the ships.
     """
-    pass
+    if orientation == "H":
+        for i in range(column, column + ship_length):
+            if board[row][i] == "¤"
+                return True
+    else: 
+        for i in range(row, row + ship_length):
+            if board[column][i] == "¤"
+                return True
+    return False
+
 
 def get_ship_location():
     pass
