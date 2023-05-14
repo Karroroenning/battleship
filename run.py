@@ -1,6 +1,6 @@
 import random
 
-ships_length = [2, 3, 4]
+ships_length = [2,3,4]
 player_guess_board = [[" "] * 8 for i in range(8)]
 computer_guess_board = [[" "] * 8 for i in range(8)]
 hidden_player_board = [[" "] * 8 for i in range(8)] 
@@ -42,20 +42,20 @@ def create_ships(board):
                     if not_overlap(board, row, column, orientation, ship_length) == False:
                         if orientation == "H":
                             for i in range(column, column + ship_length):
-                                board[row][i] == "X"
+                                board[row][i] = "X"
                         else:
                             for i in range(row, row + ship_length):
                                 board[i][column] = "X"
                         break
             else:
                 place_ship = True
-                print('Deploy you ships to the board. Set out the length of' + str(ship_length))
+                print('Deploy you ships to the board. Set out the length of ' + str(ship_length))
                 row, column, orientation = place_ship_location(place_ship)
                 if ships_not_outside(ship_length, row, column, orientation):
                     if not_overlap(board, row, column, orientation, ship_length) == False:
                         if orientation == "H":
                             for i in range(column, column + ship_length):
-                                board[row][i] == "X"
+                                board[row][i] = "X"
                         else:
                             for i in range(row, row + ship_length):
                                 board[i][column] = "X"
@@ -101,36 +101,36 @@ def place_ship_location(place_ship):
     if place_ship == True:
         while True:
             try: 
-                orientation = input("Enter orientation (H or V):").upper()
+                orientation = input("Enter orientation (H or V): ").upper()
                 if orientation == "H" or orientation == "V":
                     break
             except TypeError:
                 print("Enter a valid oriantation, H or V")
         while True:
             try:
-                row = input("Enter a number in row between 1-8 of the ship: ")
+                row = input("Enter the row 1-8 of the ship: ")
                 if row in '12345678':
                     row = int(row) -1
                     break
-            except TypeError:
+            except ValueError:
                 print("Enter a valid number between 1-8")
         while True: 
             try:
-                column = input("Enter a letter in the vertical row of the ship: ").upper()
+                column = input("Enter the column of the ship: ").upper()
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
-            except TypeError:
+            except KeyError:
                 print("Enter a valid letter between A-H")
-        return column, row, orientation
+        return row, column, orientation
     else:
         while True:
             try:
-                row = input("Choose a number between 1-8 in the the horizontal row: ")
+                row = input("Choose a number between 1-8 in the horizontal row: ")
                 if row in '12345678':
                     row = int(row) -1
                     break
-            except TypeError:
+            except ValueError:
                 print("Choose a valid number between 1-8")
         while True: 
             try:
@@ -138,9 +138,9 @@ def place_ship_location(place_ship):
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
-            except TypeError:
+            except KeyError:
                 print("Choose a valid letter between A-H")
-        return column, row
+        return row, column
 
 
 def count_hit_ships(board):
