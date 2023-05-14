@@ -3,8 +3,8 @@ from random import randint
 ships_length = [2,3,4]
 player_guess_board = [[" "] * 8 for i in range(8)]
 computer_guess_board = [[" "] * 8 for i in range(8)]
-player_board = [[" "] * 8 for i in range(8)] 
-computer_board = [[" "] * 8 for i in range(8)]
+hidden_player_board = [[" "] * 8 for i in range(8)] 
+hidden_computer_board = [[" "] * 8 for i in range(8)]
 
 
 
@@ -22,18 +22,11 @@ def menu():
     answer = input_val = input('')
     while True:
         if answer == '':
-            print_board()
-
-
+            #print_board(board)
 
     #"""
     #The gameboard. This code is copied by another coder (more info in my readme.md).
     #""""
-
-#Board for holding ship locations
-HIDDEN_BOARD = [[" "] * 8 for x in range(8)]
-# Board for displaying hits and misses
-GUESS_BOARD = [[" "] * 8 for i in range(8)]
 
 def print_board(board):
     print("  A B C D E F G H")
@@ -60,23 +53,32 @@ def create_ships(board):
     Put 3 ships on the board. Horizontel or vertical. Player puts ships that is 
     2, 3 or 3 ¤ long.
     """
+    for ship_length in ships_length:
+        while True:
+            if board == computer_guess_board:
+                orientation, row, column = random.choice(["H", "V"]), random.randint(0,7), random.randint(0,7)
+                if ships_not_outside(ship_length, orientation, row, column)
 
 def ships_not_outside():
     """
     Check if the player doesn't place the ships outside the board.
     """
+    pass
 
 def not_overlap():
     """
     Check so the player doesn't overlap the ships.
     """
+    pass
 
 def get_ship_location():
+    pass
 
 
 def count_hit_ships():
     """
     Check if all ships are hit
     """
+    pass
 
 menu()
