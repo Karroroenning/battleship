@@ -116,7 +116,7 @@ def place_ship_location(place_ship):
                 print("Enter a valid number between 1-8")
         while True: 
             try:
-                column = input("Enter the column of the ship:\n ").upper()
+                column = input("Enter the column A-H of the ship:\n ").upper()
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
