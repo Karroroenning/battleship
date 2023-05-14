@@ -59,11 +59,21 @@ def create_ships(board):
                 orientation, row, column = random.choice(["H", "V"]), random.randint(0,7), random.randint(0,7)
                 if ships_not_outside(ship_length, orientation, row, column)
 
-def ships_not_outside():
+def ships_not_outside(ship_length, orientation, row, column):
     """
     Check if the player doesn't place the ships outside the board.
     """
-    pass
+    if orientation == "H":
+        if column + ship_length > 8:
+            return False
+        else: 
+            return True
+    else:
+        if row + ship_length > 8:
+            return False
+        else:
+            return True
+    
 
 def not_overlap():
     """
