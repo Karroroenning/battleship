@@ -51,7 +51,7 @@ letters_to_numbers = {
 def create_ships(board):
     """
     Put 3 ships on the board. Horizontel or vertical. Player and computer puts ships that is 
-    2, 3 or 3 ¤ long.
+    2, 3 or 3 ¤ long. We also check so the ships dosen't overlap or place outside the board.
     """
     #Computer random puts out ships
     for ship_length in ships_length:
@@ -70,7 +70,7 @@ def create_ships(board):
             else:
                 place_ship = True
                 print('Deploy you ships to the board. Set out the length of' + str(ship_length))
-
+                row, column, orientation = place_ship_location(place_ship)
                 if ships_not_outside(ship_length, orientation, row, column):
                     if not_overlap(board, ship_length, row, column, orientation) == False:
                         if orientation == "H":
@@ -79,6 +79,7 @@ def create_ships(board):
                         else:
                             for i in range(row, row + ship_length):
                                 board[column][i] == "¤"
+                        print_board(hidden_player_board)
                         break
 
 def ships_not_outside(ship_length, orientation, row, column):
@@ -112,10 +113,57 @@ def not_overlap(board, ship_length, row, column, orientation):
     return False
 
 
-def get_ship_location():
-    pass
-
-
+def place_ship_location(place_ship):
+    """
+    Player places the ships on the gameboard. Player can use between to position the ships horizontal or vertical.
+    """
+    if place_ship == True:
+        while True:
+            try: 
+                orientation = input("Enter orientation (H or V):").upper()
+                if orientation == "H" or orientation == "V":
+                    break
+            except TypeError:
+                print("Enter a valid oriantation, H or V")
+        while True:
+            try:
+                row = input("Enter a number 1-8 in the the horizontal row of the ship: ")
+                if row in '12345678':
+                    row = int(row) -1
+                    break
+            except TypeError:
+                print("Enter a valid number between 1-8")
+        while True: 
+            try:
+                column = input("Enter a letter in the vertical row of the ship: ").upper()
+                if column in 'ABCDEFGH':
+                    column = letters_to_numbers[column]
+                    break
+            except TypeError:
+                print("Enter a valid letter between A-H")
+        return column, row, orientation
+    """
+    The player takes a chance on where the computer has placed its ships.
+    """   
+    else:
+        while True:
+            try:
+                row = input("Choose a number between 1-8 in the the horizontal row: ")
+                if row in '12345678':
+                    row = int(row) -1
+                    break
+            except TypeError:
+                print("Choose a valid number between 1-8")
+        while True: 
+            try:
+                column = input("Choose a letter in the vertical row: ").upper()
+                if column in 'ABCDEFGH':
+                    column = letters_to_numbers[column]
+                    break
+            except TypeError:
+                print("Choose a valid letter between A-H")
+        return column, row
+                
 def count_hit_ships():
     """
     Check if all ships are hit
