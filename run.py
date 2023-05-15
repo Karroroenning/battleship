@@ -161,6 +161,9 @@ def count_hit_ships(board):
 
 
 def turn(board):
+    """
+    if the player and computer hit or miss the boats.
+    """
     if board == hidden_player_board:
         row, column = place_ship_location(hidden_player_board)
         if board[row][column] == "-":
@@ -199,7 +202,8 @@ while True:
         turn(hidden_player_board)
         break
     if count_hit_ships(hidden_player_board) == 9:
-        print("BOOM, You Win!")
+        print(Fore.GREEN + "BOOM, You Win!")
+        print(Style.RESET_ALL)
         break
 #computer turn
     while True:
@@ -207,5 +211,6 @@ while True:
         break
     print_board(hidden_computer_board)
     if count_hit_ships(hidden_computer_board) == 9:
-        print("BOOM, You lose!")
+        print(Fore.GREEN + "BOOM, You lose!")
+        print(Style.RESET_ALL)
         break
