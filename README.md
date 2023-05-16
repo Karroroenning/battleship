@@ -1,5 +1,10 @@
 # Battleships
 
+![Picture of, am i responsive to all differents screensizes](/Images/am_i_responsive.png)
+
+## **How To Play**
+
+
 This is a classic battleship game.
 The rules are simple.
 This is a game that you play against the computer.
@@ -9,11 +14,23 @@ When you have deployed your 3 ships, the game is started. Then you have to write
 You guess every other time until one has sunk the other's ship.
 
 
-## Reminders
+## Features
+
+**Existing features**
 
 
-## Creating the Heroku app
+**Future Features**
 
+## Data model
 
+## Testing
 
-## Constraints
+**Bugs**
+
+**Solved Bugs**
+
+**Validator testing**
+
+## Deployment
+
+## Credits
