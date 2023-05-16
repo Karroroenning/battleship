@@ -18,6 +18,30 @@ You guess every other time until one has sunk the other's ship.
 
 **Existing features**
 
+- Start
+
+When the game runs the text BATTLESHIPS comes up and the text how the player will deploy there ships to the board. 
+
+![Start screen, where player will set there boats.](/Images/start.png)
+
+- Players gameboard. Computer does not see this.
+
+Before the game starts, the player gets to see where he has placed his three ships.
+
+![Players gameboard, where they put there ships](/Images/player_ships.png)
+
+- Start to attack the computers ships on the board.
+
+Time to attack. You first choose which number to put and then the letter. So you choose position in both horizontal and vertical.
+
+![](/Images/guess.png)
+
+- Hit and miss
+
+The computers game board and the players game board are shown here. "-" is a miss and "X" is a hit.
+
+![Hit and miss](/Images/hit_miss.png)
+
 
 **Future Features**
 
