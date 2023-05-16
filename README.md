@@ -62,6 +62,16 @@ The computers game board and the players game board are shown here. "-" is a mis
 
 ## Deployment
 
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+Steps for deployment:
+
+- Clone this repository
+- Create a new Heroku app
+- Set the buildbacks to Python and NodeJs in that order
+- Link the Heroku app to the repository
+- Click Deploy
+
 ## Credits
 - [Battleship Game code in python](https://copyassignment.com/battleship-game-code-in-python/)
 - [Mushbt on github](https://github.com/Mushbt/battleships-pp3/blob/main/run.py)
