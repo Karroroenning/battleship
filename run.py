@@ -38,7 +38,7 @@ def create_ships(board):
             if board == computer_guess_board:
                 orientation, row, column = random.choice(["H", "V"]), random.randint(0, 7), random.randint(0, 7)
                 if ships_not_outside(ship_length, row, column, orientation):
-                    if not_overlap(board, row, column, orientation, ship_length) == False:
+                    if not_overlap(board, row, column, orientation, ship_length) is False:
                         if orientation == "H":
                             for i in range(column, column + ship_length):
                                 board[row][i] = "X"
@@ -51,7 +51,7 @@ def create_ships(board):
                 print('Deploy you ships to the board. Set out the length of ' + str(ship_length))
                 row, column, orientation = place_ship_location(place_ship)
                 if ships_not_outside(ship_length, row, column, orientation):
-                    if not_overlap(board, row, column, orientation, ship_length) == False:
+                    if not_overlap(board, row, column, orientation, ship_length) is False:
                         if orientation == "H":
                             for i in range(column, column + ship_length):
                                 board[row][i] = "X"
@@ -97,7 +97,7 @@ def place_ship_location(place_ship):
     """
     Player places the ships on the gameboard. Player can use between to position the ships horizontal or vertical.
     """
-    if place_ship == True:
+    if place_ship is True:
         while True:
             try:
                 orientation = input("Enter orientation (H or V):\n ").upper()
