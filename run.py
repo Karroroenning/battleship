@@ -184,7 +184,6 @@ def turn(board):
 menu()
 create_ships(computer_guess_board)
 create_ships(player_guess_board)
-print_board(computer_guess_board)
 print_board(player_guess_board)
 
 
@@ -197,8 +196,7 @@ while True:
         turn(hidden_player_board)
         break
     if count_hit_ships(hidden_player_board) == 9:
-        print(Fore.GREEN + "BOOM, You Win!")
-        print(Style.RESET_ALL)
+        print("BOOM, You Win!")
         break
 #computer turn
     while True:
@@ -206,6 +204,5 @@ while True:
         break
     print_board(hidden_computer_board)
     if count_hit_ships(hidden_computer_board) == 9:
-        print(Fore.GREEN + "BOOM, You lose!")
-        print(Style.RESET_ALL)
+        print("BOOM, You lose!")
         break
