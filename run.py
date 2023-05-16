@@ -1,9 +1,9 @@
 import random
 
-ships_length = [2,3,4]
+ships_length = [2, 3, 4]
 player_guess_board = [[" "] * 8 for i in range(8)]
 computer_guess_board = [[" "] * 8 for i in range(8)]
-hidden_player_board = [[" "] * 8 for i in range(8)] 
+hidden_player_board = [[" "] * 8 for i in range(8)]
 hidden_computer_board = [[" "] * 8 for i in range(8)]
 letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
@@ -17,7 +17,7 @@ def menu():
 
     """
     )
-    
+
 
 def print_board(board):
     print("  A B C D E F G H")
@@ -26,18 +26,17 @@ def print_board(board):
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
-        
+
 
 def create_ships(board):
     """
-    Put 3 ships on the board. Horizontel or vertical. Player and computer puts ships that is 
-    2, 3 or 3 ¤ long. We also check so the ships dosen't overlap or place outside the board.
+    Put 3 ships on the board. Horizontel or vertical. Player and computer puts ships that is 2, 3 or 3 ¤ long. We also check so the ships dosen't overlap or place outside the board.
     """
-    #Computer random puts out ships
+    # Computer random puts out ships
     for ship_length in ships_length:
         while True:
             if board == computer_guess_board:
-                orientation, row, column = random.choice(["H", "V"]), random.randint(0,7), random.randint(0,7)
+                orientation, row, column = random.choice(["H", "V"]), random.randint(0, 7), random.randint(0, 7)
                 if ships_not_outside(ship_length, row, column, orientation):
                     if not_overlap(board, row, column, orientation, ship_length) == False:
                         if orientation == "H":
@@ -70,14 +69,14 @@ def ships_not_outside(ship_length, row, column, orientation):
     if orientation == "H":
         if column + ship_length > 8:
             return False
-        else: 
+        else:
             return True
     else:
         if row + ship_length > 8:
             return False
         else:
             return True
-    
+
 
 def not_overlap(board, row, column, orientation, ship_length):
     """
@@ -87,7 +86,7 @@ def not_overlap(board, row, column, orientation, ship_length):
         for i in range(column, column + ship_length):
             if board[row][i] == "X":
                 return True
-    else: 
+    else:
         for i in range(row, row + ship_length):
             if board[i][column] == "X":
                 return True
@@ -100,7 +99,7 @@ def place_ship_location(place_ship):
     """
     if place_ship == True:
         while True:
-            try: 
+            try:
                 orientation = input("Enter orientation (H or V):\n ").upper()
                 if orientation == "H" or orientation == "V":
                     break
@@ -114,7 +113,7 @@ def place_ship_location(place_ship):
                     break
             except ValueError:
                 print("Enter a valid number between 1-8")
-        while True: 
+        while True:
             try:
                 column = input("Enter the column A-H of the ship:\n ").upper()
                 if column in 'ABCDEFGH':
@@ -132,7 +131,7 @@ def place_ship_location(place_ship):
                     break
             except ValueError:
                 print("Choose a valid number between 1-8")
-        while True: 
+        while True:
             try:
                 column = input("Choose a letter in the vertical row:\n ").upper()
                 if column in 'ABCDEFGH':
@@ -170,7 +169,7 @@ def turn(board):
         else:
             board[row][column] = "-"
     else:
-        row, column = random.randint(0,7), random.randint(0,7)
+        row, column = random.randint(0, 7), random.randint(0, 7)
         if board[row][column] == "-":
             turn(board)
         elif board[row][column] == "X":
@@ -187,9 +186,8 @@ create_ships(player_guess_board)
 print_board(player_guess_board)
 
 
-
 while True:
-#player turn
+# player turn
     while True:
         print('Guess a battleship location')
         print_board(hidden_player_board)
@@ -198,7 +196,7 @@ while True:
     if count_hit_ships(hidden_player_board) == 9:
         print("BOOM, You Win!")
         break
-#computer turn
+# computer turn
     while True:
         turn(hidden_computer_board)
         break
