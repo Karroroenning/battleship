@@ -16,7 +16,7 @@ You guess every other time until one has sunk the other's ship.
 
 ## Features
 
-**Existing features**
+**Existing Features**
 
 - Start
 
@@ -44,6 +44,11 @@ The computers game board and the players game board are shown here. "-" is a mis
 
 
 **Future Features**
+
+- Want to develop so that you have a first page so that you can start the game with enter.
+- Have multiple ships
+- Easier to guess where the ships are. For example 3G. 
+- Add your High scores
 
 ## Data model
 
