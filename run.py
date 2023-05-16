@@ -1,5 +1,4 @@
 import random
-from colorama import Fore, Back, Style
 
 ships_length = [2,3,4]
 player_guess_board = [[" "] * 8 for i in range(8)]
@@ -10,7 +9,7 @@ letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H
 
 
 def menu():
-    print(Fore.RED +
+    print(
         """
     __  ____ ___ ___ _    ____ ____ _  _ _ ___  ____
     |__] |__|  |   |  |    |___ [__  |__| | |__] [__
@@ -18,20 +17,16 @@ def menu():
 
     """
     )
-    print(Style.RESET_ALL)
     
 
 def print_board(board):
     print("  A B C D E F G H")
-    print(Fore.RED + " -----------------")
-    print(Style.RESET_ALL)
+    print(" -----------------")
     row_number = 1
     for row in board:
-        print("%d|%s|" % (row_number, Fore.BLUE + "|".join(row)))
+        print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
-        print(Style.RESET_ALL)
         
-
 
 def create_ships(board):
     """
