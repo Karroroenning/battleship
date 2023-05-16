@@ -63,3 +63,6 @@ The computers game board and the players game board are shown here. "-" is a mis
 ## Deployment
 
 ## Credits
+- [Battleship Game code in python](https://copyassignment.com/battleship-game-code-in-python/)
+- [Mushbt on github](https://github.com/Mushbt/battleships-pp3/blob/main/run.py)
+- My start text "Battleship" is all taken from [sean-meade on github](https://github.com/sean-meade/cli-battleship-game/blob/main/run.py)
