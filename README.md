@@ -78,9 +78,9 @@ I had typed TypeError on all of them.
 **Validator testing**
 
 - [PEP8](https://pep8ci.herokuapp.com/#)
-- No errors other than that some lines are too long
+- No errors other than that one lines are too long
 
-![PEP8 bugs, line are to long](/Images/PEP8.png)
+![PEP8 bugs, line are to long](/Images/one_line_long.png)
 
 
 ## Deployment
