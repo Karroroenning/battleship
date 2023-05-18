@@ -30,7 +30,16 @@ def print_board(board):
 
 def create_ships(board):
     """
-    Put 3 ships on the board. Horizontel or vertical. Player and computer puts ships that is 2, 3 or 3 ¤ long. We also check so the ships dosen't overlap or place outside the board.
+    Put 3 ships on the board.
+    """
+    """
+    Horizontel or vertical.
+    """
+    """
+    Player and computer puts ships that is 2, 3 or 3 ¤ long.
+    """
+    """
+    We also check so the ships dosen't overlap or place outside the board.
     """
     # Computer random puts out ships
     for ship_length in ships_length:
@@ -48,7 +57,8 @@ def create_ships(board):
                         break
             else:
                 place_ship = True
-                print('Deploy you ships to the board. Set out the length of ' + str(ship_length))
+                print('Deploy you ships to the board.')
+                print('Set out the length of ' + str(ship_length))
                 row, column, orientation = place_ship_location(place_ship)
                 if ships_not_outside(ship_length, row, column, orientation):
                     if not_overlap(board, row, column, orientation, ship_length) is False:
@@ -95,7 +105,10 @@ def not_overlap(board, row, column, orientation, ship_length):
 
 def place_ship_location(place_ship):
     """
-    Player places the ships on the gameboard. Player can use between to position the ships horizontal or vertical.
+    Player places the ships on the gameboard.
+    """
+    """
+    Player can use between to position the ships horizontal or vertical.
     """
     if place_ship is True:
         while True:
