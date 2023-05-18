@@ -64,13 +64,16 @@ The computers game board and the players game board are shown here. "-" is a mis
 
 
 - I got an error message on PEP8 so I fixed it
+
 ![bug from PEP8](/Images/bug_from_pep8.png)
 
 - I had accidentally switched places on [column][i] so when you were to deploy your ships, it deployed the first ship automatically.
+
 ![switched places on column and i.](/Images/change_column.png)
 
 - When i for example press enter instead of a number when i should press a number it came up an error message.
 I had typed TypeError on all of them.
+
 ![TypeError on all of them.](/Images/typeError.png)
 
 
