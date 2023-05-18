@@ -44,7 +44,7 @@ def create_ships(board):
                                 board[row][i] = "X"
                         else:
                             for i in range(row, row + ship_length):
-                                board[i][column] = "X"
+                                board[column][i] == "X"
                         break
             else:
                 place_ship = True
@@ -111,7 +111,7 @@ def place_ship_location(place_ship):
                 if row in '12345678':
                     row = int(row)-1
                     break
-            except ValueError:
+            except TypeError:
                 print("Enter a valid number between 1-8")
         while True:
             try:
@@ -119,7 +119,7 @@ def place_ship_location(place_ship):
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
-            except KeyError:
+            except TypeError:
                 print("Enter a valid letter between A-H")
         return row, column, orientation
     else:
@@ -129,7 +129,7 @@ def place_ship_location(place_ship):
                 if row in '12345678':
                     row = int(row)-1
                     break
-            except ValueError:
+            except TypeError:
                 print("Choose a valid number between 1-8")
         while True:
             try:
@@ -137,7 +137,7 @@ def place_ship_location(place_ship):
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
-            except KeyError:
+            except TypeError:
                 print("Choose a valid letter between A-H")
         return row, column
 
@@ -187,7 +187,7 @@ print_board(player_guess_board)
 
 
 while True:
-# player turn
+    # player turn
     while True:
         print('Guess a battleship location')
         print_board(hidden_player_board)
