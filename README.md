@@ -50,8 +50,6 @@ The computers game board and the players game board are shown here. "-" is a mis
 - Easier to guess where the ships are. For example 3G. 
 - Add your High scores
 
-## Data model
-
 ## Testing
 
 **Solved Bugs**
@@ -78,6 +76,11 @@ I had typed TypeError on all of them.
 
 
 **Validator testing**
+
+- [PEP8](https://pep8ci.herokuapp.com/#)
+- No errors other than that some lines are too long
+
+![PEP8 bugs, line are to long](/Images/PEP8.png)
 
 
 ## Deployment
