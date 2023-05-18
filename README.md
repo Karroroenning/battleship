@@ -54,11 +54,28 @@ The computers game board and the players game board are shown here. "-" is a mis
 
 ## Testing
 
-**Bugs**
-
 **Solved Bugs**
 
+
+- I had a bug after I had placed my ships, that I saw where the computers had their ships before the game started. I had written that you would see it. So I removed it and that fixed it.
+
+
+![Printed out that we would see the computer ships before the game startde.](/Images/bug.png)
+
+
+- I got an error message on PEP8 so I fixed it
+![bug from PEP8](/Images/bug_from_pep8.png)
+
+- I had accidentally switched places on [column][i] so when you were to deploy your ships, it deployed the first ship automatically.
+![switched places on column and i.](/Images/change_column.png)
+
+- When i for example press enter instead of a number when i should press a number it came up an error message.
+I had typed TypeError on all of them.
+![TypeError on all of them.](/Images/typeError.png)
+
+
 **Validator testing**
+
 
 ## Deployment
 
