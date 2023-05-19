@@ -144,7 +144,7 @@ def place_ship_location(place_ship):
                 if row in '12345678':
                     row = int(row) - 1
                     break
-            except TypeError:
+            except ValueError:
                 print('Enter a valid number between 1-8')
         while True:
             try:
@@ -153,7 +153,7 @@ def place_ship_location(place_ship):
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
-            except TypeError:
+            except KeyError:
                 print('Enter a valid letter between A-H')
         return (row, column, orientation)
     else:
@@ -165,7 +165,7 @@ def place_ship_location(place_ship):
                 if row in '12345678':
                     row = int(row) - 1
                     break
-            except TypeError:
+            except ValueError:
                 print('Choose a valid number between 1-8')
         while True:
             try:
@@ -174,7 +174,7 @@ def place_ship_location(place_ship):
                 if column in 'ABCDEFGH':
                     column = letters_to_numbers[column]
                     break
-            except TypeError:
+            except KeyError:
                 print('Choose a valid letter between A-H')
         return (row, column)
 
