@@ -44,7 +44,6 @@ def create_ships(board):
     """
 
     # Computer random puts out ships
-
     for ship_length in ships_length:
         while True:
             if board == computer_guess_board:
@@ -54,12 +53,12 @@ def create_ships(board):
                 if ships_not_outside(ship_length, row, column, orientation):
                     if not_overlap(board, row, column, orientation,
                                    ship_length) is False:
-                        if orientation == 'H':
+                        if orientation == "H":
                             for i in range(column, column + ship_length):
-                                board[row][i] = 'X'
+                                board[row][i] = "X"
                         else:
                             for i in range(row, row + ship_length):
-                                board[column][i] == 'X'
+                                board[i][column] = "X"
                         break
             else:
                 place_ship = True
