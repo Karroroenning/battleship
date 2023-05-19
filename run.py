@@ -48,7 +48,9 @@ def create_ships(board):
     for ship_length in ships_length:
         while True:
             if board == computer_guess_board:
-                orientation, row, column = random.choice(["H", "V"]), random.randint(0, 7), random.randint(0, 7)
+                (orientation, row, column) = (random.choice(['H', 'V']),
+                                              random.randint(0, 7),
+                                              random.randint(0, 7))
                 if ships_not_outside(ship_length, row, column, orientation):
                     if not_overlap(board, row, column, orientation,
                                    ship_length) is False:
